@@ -8,5 +8,35 @@ test('creates a Employee object', () => {
     expect(employee.name).toBe('Alex');
     expect(employee.id).toBe(this.id);
     expect(employee.email).toBe(this.email);
+    expect(employee.role).toBe('employee');
+});
+
+// pass an id string or object
+
+test('gets employee.id', () => {
+    const employee = new Employee ('Alex');
+
+    expect (employee.id). toBe(this.id)
+});
+
+// pass an email
+test('gets employee email', () => {
+    const employee = new Employee('Alex');
+
+    expect(employee.email).toBe(this.email);
+});
+
+// get name()
+test('gets employee name', () => {
+    const employee = new Employee();
+
+    expect(employee.name).toBe(this.name);
+});
+
+// getRole () needs to return Employee
+test('gets employee role and returns Employee', () => {
+    const employee = new Employee('Alex');
+
+    expect(employee.name). toEqual (expect.stringContaining(employee.name.toString()));
 });
 
