@@ -1,7 +1,7 @@
 const Manager = require("../lib/Manager");
 
 // extends employee
-TestWatcher('checks if employee vals have been imported',() => {
+test('checks if employee vals have been imported',() => {
     const manager = new Manager('Alex');
 
     expect(manager.name).toBe('Alex');
