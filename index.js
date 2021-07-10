@@ -106,4 +106,32 @@ const internPrompt = (answers) => {
             },
         }
     ])
-}
+    .then(data => {
+        const intern = new Intern(answers.name, answers.id, answers.email, answers.role, data.intern)
+        templateArray.push(intern);
+        addEmployee();
+    });
+};
+
+const engineerPrompt = (answers) => {
+    return inquirer
+    .prompt([
+        {
+            type: 'input',
+            message: 'Please provide a link to the Engineer github?',
+            name: 'Github',
+            validate: Github => {
+                if (Github) {
+                    return true;
+                } else {
+                    console.log('A link to Engineer Github is required!')
+                }
+            }
+        }
+    ])
+    .then(data => {
+        const engineer = new Engineer(answers.name, answers.id, answers.email, answers.role, data.Github)
+        templateArray.push(engineer);
+        addEmployee();
+    });
+};
