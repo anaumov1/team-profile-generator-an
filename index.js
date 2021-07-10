@@ -55,4 +55,55 @@ const profile = () => {
             }
         }    
     ])
+    .then(data => {
+        if(data.role === 'Manager') {
+            managerPrompt(data)
+        } else if (data.role === 'Intern') {
+
+        } else {
+            engineerPrompt(data)
+        }
+    })
+};
+
+const managerPrompt = (answers) => {
+    return inquirer
+    .prompt([
+        {
+            type: 'input',
+            message: 'Please enter the Managers phone number.',
+            name: 'number',
+            validate: numberInput => {
+                if (numberInput) {
+                    return true;
+                } else {
+                    console.log('Manager phone number is required!')
+                }
+            }
+        }
+    ])
+
+    .then(data => {
+        const manager = new Manager(answers.name, answers.id, answers.email, answers.role, data.number)
+        templateArray.push(manager)
+        addEmployee();
+    });
+};
+
+const internPrompt = (answers) => {
+    return inquirer
+    .prompt ([
+        {
+            type: 'input',
+            message: 'Plase enter Intern school.',
+            name: 'intern',
+            validate: internInput => {
+                if (internInput) {
+                    return true;
+                } else {
+                    console.log('School is required for Intern!')
+                }
+            },
+        }
+    ])
 }
