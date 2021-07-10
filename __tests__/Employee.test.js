@@ -8,7 +8,6 @@ test('creates a Employee object', () => {
     expect(employee.name).toBe('Alex');
     expect(employee.id).toBe(this.id);
     expect(employee.email).toBe(this.email);
-    expect(employee.role).toBe('employee');
 });
 
 // pass an id string or object

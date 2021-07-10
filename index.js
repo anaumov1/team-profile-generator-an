@@ -59,7 +59,7 @@ const profile = () => {
         if(data.role === 'Manager') {
             managerPrompt(data)
         } else if (data.role === 'Intern') {
-
+            internPrompt(data)
         } else {
             engineerPrompt(data)
         }
@@ -95,15 +95,16 @@ const internPrompt = (answers) => {
     .prompt ([
         {
             type: 'input',
-            message: 'Plase enter Intern school.',
+            message: 'What school does the intern attend?',
             name: 'intern',
             validate: internInput => {
                 if (internInput) {
                     return true;
                 } else {
-                    console.log('School is required for Intern!')
+                    console.log('You must enter the school the intern attends!')
                 }
             },
+
         }
     ])
     .then(data => {
