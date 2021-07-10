@@ -135,3 +135,28 @@ const engineerPrompt = (answers) => {
         addEmployee();
     });
 };
+
+//  prompt to create the file when the user is done entering data
+const addEmployee = () => {
+    return inquirer
+    .prompt([
+        {
+            type: 'confirm',
+            message: 'Would you like to add another employee?',
+            name: 'addEmployee',
+            default: false 
+        }
+    ])
+    .then(data => {
+        if(data.addEmployee === true) {
+            profile();
+        } else {
+            // const templateString = JSON.stringify(templateArray);
+            handler(templateArray);
+        }
+        });
+};
+
+
+
+profile();    
