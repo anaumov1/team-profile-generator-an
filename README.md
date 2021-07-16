@@ -36,6 +36,3 @@ The user will need to install "Jest" to be able to run the test functions if so 
  
   The tests can run by using "npm run test" command in the command line. User must install Jest in ordr to use the test functionality.
 
-
-  ## Questions
-If you have any questions about the repo, open an issue or contact me directly at random@gmail.com. You can find more of my work at [anumov1](https://github.com/anumov1/).
