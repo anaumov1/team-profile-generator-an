@@ -35,11 +35,14 @@ const profile = () => {
             message: "Please enter Employee ID number.",
             name: 'id',
             validate: idInput => {
-                if (idInput) {
+                const pass = idInput.match(
+                    /^[1-9]\d*$/
+                    );
+                if (pass) {
                     return true;
-                } else {
-                    console.log('')
-                }
+                } 
+                    return "Please enter a positive number greater than zero.";
+                
             }
         },
         {
@@ -47,11 +50,14 @@ const profile = () => {
             message: "Please enter Employee email",
             name: 'email',
             validate: emailInput => {
-                if (emailInput) {
+                const pass = emailInput.match(
+                    /\S+@\S+\.\S+/
+                );
+                if (pass) {
                     return true;
-                } else {
-                    console.log('')
-                }
+                } 
+                return "Please enter a valid email address.";
+                
             }
         }    
     ])
